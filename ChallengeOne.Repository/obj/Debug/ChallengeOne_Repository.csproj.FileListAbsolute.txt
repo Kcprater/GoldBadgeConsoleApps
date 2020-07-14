@@ -1,0 +1,6 @@
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\bin\Debug\ChallengeOne.Repository.dll
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\bin\Debug\ChallengeOne.Repository.pdb
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\obj\Debug\ChallengeOne_Repository.csprojAssemblyReference.cache
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\obj\Debug\ChallengeOne_Repository.csproj.CoreCompileInputs.cache
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\obj\Debug\ChallengeOne.Repository.dll
+C:\Users\13173\source\repos\Gold-Badge-Console-Application-Challenges\ChallengeOne.Repository\obj\Debug\ChallengeOne.Repository.pdb
