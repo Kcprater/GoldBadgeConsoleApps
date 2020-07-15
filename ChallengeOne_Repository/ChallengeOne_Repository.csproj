@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6823B943-6B8A-43EB-8480-7C02E1CAC3D5}</ProjectGuid>
+    <ProjectGuid>{727F256B-F85D-4C9E-8884-A03ED812590E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChallengeOne.Repository</RootNamespace>

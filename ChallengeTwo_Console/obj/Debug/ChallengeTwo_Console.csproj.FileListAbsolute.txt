@@ -1,0 +1,10 @@
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\obj\Debug\ChallengeTwo_Console.csprojAssemblyReference.cache
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\obj\Debug\ChallengeTwo_Console.csproj.CoreCompileInputs.cache
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\bin\Debug\ChallengeTwo_Console.exe.config
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\bin\Debug\ChallengeTwo_Console.exe
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\bin\Debug\ChallengeTwo_Console.pdb
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\bin\Debug\ChallengeTwo_Repository.dll
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\bin\Debug\ChallengeTwo_Repository.pdb
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\obj\Debug\ChallengeTwo_Console.csproj.CopyComplete
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\obj\Debug\ChallengeTwo_Console.exe
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeTwo_Console\obj\Debug\ChallengeTwo_Console.pdb
