@@ -101,7 +101,7 @@ namespace ChallengeTwo_Console
             //Damage Amount
             Console.WriteLine("Amount of damage: ");
             string claimAmountAsString = Console.ReadLine();
-            newClaim.ClaimAmount = double.Parse(claimIDAsString);
+            newClaim.ClaimAmount = double.Parse(claimAmountAsString);
 
             //Date of Accident
             Console.WriteLine("Enter the date the accident occurred (YYYY,MM,DD):");

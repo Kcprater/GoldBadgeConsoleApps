@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ChallengeOne_Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class KomodoCafeTests
     {
         [TestMethod]
         public void AddFoodToMenu_ShouldGetCorrectBoolean()

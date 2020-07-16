@@ -11,15 +11,15 @@ namespace ChallengeTwo_Repository
         private Queue<Claims> _claimsQ = new Queue<Claims>();
         public void AddNewClaim(Claims claim)
         {
-            _claimsQ.Enqueue(claim);
+            _claimsQ.Enqueue(claim); //Add To Back (FIFO)
         }
         public Claims TakeCareOfNextClaim()
         {
-            return _claimsQ.Peek();
+            return _claimsQ.Peek(); //View Front Element
         }
         public void RemoveClaim()
         {
-            _claimsQ.Dequeue();
+            _claimsQ.Dequeue(); //Remove Front Element
         }
         public Queue<Claims> ViewClaims()
         {
