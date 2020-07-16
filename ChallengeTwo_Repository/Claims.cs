@@ -20,7 +20,6 @@ namespace ChallengeTwo_Repository
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
-
         //if difference of DateOfIncident and DateOfClaim is <= 30 days is valid else invalid
         public bool IsValid
         {

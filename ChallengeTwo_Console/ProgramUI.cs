@@ -31,10 +31,8 @@ namespace ChallengeTwo_Console
                     "2. Take care of next claim\n" +
                     "3. Enter a new claim\n" +
                     "4. Exit");
-
                 //Get User Input
                 string input = Console.ReadLine();
-
                 //Evaluate The Input And Act Accordingly
                 switch (input)
                 {
@@ -69,12 +67,10 @@ namespace ChallengeTwo_Console
         {
             Console.Clear();
             Claims newClaim = new Claims();
-
             //Claim ID
             Console.WriteLine("Enter the claim id:");
             string claimIDAsString = Console.ReadLine();
             newClaim.ClaimID = int.Parse(claimIDAsString);
-
             //Claim Type - ENUM
             Console.WriteLine("Select the claim type: \n" +
                 "1. Car \n" +
@@ -97,22 +93,18 @@ namespace ChallengeTwo_Console
             //Description
             Console.WriteLine("Enter description for claim:");
             newClaim.Description = Console.ReadLine();
-
             //Damage Amount
             Console.WriteLine("Amount of damage: ");
             string claimAmountAsString = Console.ReadLine();
             newClaim.ClaimAmount = double.Parse(claimAmountAsString);
-
             //Date of Accident
             Console.WriteLine("Enter the date the accident occurred (YYYY,MM,DD):");
             var incidentDate = Console.ReadLine();
             newClaim.DateOfIncident = DateTime.Parse(incidentDate);
-
             //Date of Claim
             Console.WriteLine("Enter the date the claim was filed (YYYY,MM,DD)");
             var claimDate = Console.ReadLine();
             newClaim.DateOfClaim = DateTime.Parse(claimDate);
-
 
             _claimsRepo.AddNewClaim(newClaim);
 
@@ -170,7 +162,7 @@ namespace ChallengeTwo_Console
             //Seed Claims List
             private void SeedClaims()
         {
-            Claims claimOne = new Claims(3, ClaimType.Car, "Truck slide down boat dock - Complete Loss.", 53456.78d, new DateTime (2019, 04, 23), new DateTime (2020, 02, 11));
+            Claims claimOne = new Claims(783, ClaimType.Car, "Truck slide down boat dock - Complete Loss.", 53456.78d, new DateTime (2019, 04, 23), new DateTime (2020, 02, 11));
             Claims claimTwo = new Claims(45, ClaimType.Home, "Fire - Started by wood burning kit igniting drapes.", 50000.00d, new DateTime (2020, 07, 10), new DateTime (2020, 07, 15));
             Claims claimThree = new Claims(3, ClaimType.Theft, "Broken Window. TV was stolen.", 674.38d, new DateTime (2016,12,10), new DateTime (2017,01,02));
 
