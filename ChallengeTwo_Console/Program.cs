@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ChallengeTwo_Console
-{
-    class Program
+{  class Program
     {
-        static void Main(string[] args)
+   static void Main(string[] args)
         {
                 ProgramUI ui = new ProgramUI();
                 ui.Run();

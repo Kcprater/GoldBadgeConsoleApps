@@ -8,59 +8,22 @@ namespace ChallengeTwo_Repository
 {
     public class ClaimsRepo
     {
-        private List<Claims> _claimsList = new List<Claims>();
-
-        //Enter A New Claim
-        public bool AddNewClaim(Claims claim)
+        private Queue<Claims> _claimsQ = new Queue<Claims>();
+        public void AddNewClaim(Claims claim)
         {
-            int startingCount = _claimsList.Count;
-            _claimsList.Add(claim);
-            bool wasAdded = (_claimsList.Count > startingCount) ? true : false;
-            return wasAdded;
+            _claimsQ.Enqueue(claim);
         }
-        //See All Claims
-        public List<Claims> ViewClaims()
+        public Claims TakeCareOfNextClaim()
         {
-            return _claimsList;
+            return _claimsQ.Peek();
         }
-
-        //Get Claim by ClaimID
-        public Claims GetClaimByID(int claimID)
+        public void RemoveClaim()
         {
-            foreach (Claims id in _claimsList)
-            {
-                if (id.ClaimID == claimID)
-                {
-                    return id;
-                }
-            }
-            return null;
+            _claimsQ.Dequeue();
         }
-        //Delete Claim
-        public bool DeleteClaim(int claimID)
+        public Queue<Claims> ViewClaims()
         {
-            var existingClaim = GetClaimByID(claimID);
-            return _claimsList.Remove(existingClaim);
-        }
-
-        //Update Claim
-        public bool UpdateClaim(int ClaimID, Claims updateExisitngClaim)
-        {
-            Claims originalClaim = GetClaimByID(ClaimID);
-            if (originalClaim != null)
-            {
-                originalClaim.ClaimAmount = updateExisitngClaim.ClaimAmount;
-                originalClaim.ClaimType = updateExisitngClaim.ClaimType;
-                originalClaim.Description = updateExisitngClaim.Description;
-                originalClaim.ClaimType = updateExisitngClaim.ClaimType;
-                originalClaim.DateOfIncident = updateExisitngClaim.DateOfIncident;
-                originalClaim.DateOfClaim = updateExisitngClaim.DateOfClaim;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _claimsQ;
         }
     }
 }

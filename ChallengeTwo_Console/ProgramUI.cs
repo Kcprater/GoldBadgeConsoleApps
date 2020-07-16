@@ -1,7 +1,9 @@
 ﻿using ChallengeTwo_Repository;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,13 +24,13 @@ namespace ChallengeTwo_Console
             bool adjustingClaims = true;
             while (adjustingClaims)
             {
-                //Console.Clear(); // may need may not??????????????
                 //Display our options to user
-                Console.WriteLine("Choose a menu item:\n" +
+                Console.WriteLine("Welcome to Komodo's Claims Department!\n" +
+                    "Select an option from below:\n\n" +
                     "1. See all claims\n" +
                     "2. Take care of next claim\n" +
                     "3. Enter a new claim\n" +
-                    "4. Exit ");
+                    "4. Exit");
 
                 //Get User Input
                 string input = Console.ReadLine();
@@ -37,24 +39,24 @@ namespace ChallengeTwo_Console
                 switch (input)
                 {
                     case "1":
-                        //See all claims
+                        //See All Claims (Seeded 3 just for Demonstration)
                         ViewClaims();
                         break;
-                    //case "2":
-                    //    //Take care of next claim
-                    //    TakeCareOfNextClaim();//not sure what to do here yet
-                    //    break;
+                    case "2":
+                        //View Next Claim To Take Care Of
+                        TakeCareOfNextClaim();
+                        break;
                     case "3":
-                        //Delete Menu Item
+                        //Add A New Claim
                         AddNewClaim();
                         break;
                     case "4":
                         //Exit
-                        Console.WriteLine("Goodbye!");
+                        Console.WriteLine("Done for the day already?\n");
                         adjustingClaims = false;
                         break;
                     default:
-                        Console.WriteLine("Please enter a valid number");
+                        Console.WriteLine("Please enter a valid number (1-4)");
                         break;
                 }
                 Console.WriteLine("Press any key to continue");
@@ -93,16 +95,16 @@ namespace ChallengeTwo_Console
             }
 
             //Description
-            Console.WriteLine("Enter a claim description:");
+            Console.WriteLine("Enter description for claim:");
             newClaim.Description = Console.ReadLine();
 
             //Damage Amount
-            Console.WriteLine("Amount of damge: ");
+            Console.WriteLine("Amount of damage: ");
             string claimAmountAsString = Console.ReadLine();
             newClaim.ClaimAmount = double.Parse(claimIDAsString);
 
             //Date of Accident
-            Console.WriteLine("Date of accident (YYYY,MM,DD):");
+            Console.WriteLine("Enter the date the accident occurred (YYYY,MM,DD):");
             var incidentDate = Console.ReadLine();
             newClaim.DateOfIncident = DateTime.Parse(incidentDate);
 
@@ -129,49 +131,48 @@ namespace ChallengeTwo_Console
                     $"Amount: ${claim.ClaimAmount}\n" +
                     $"DateOfIncident: {claim.DateOfIncident}\n" +
                     $"DateOfClaim: {claim.DateOfClaim}\n" +
-                    $"IsValid: {claim.IsValid}\n \n \n" +
-                    "Do you want to deal with this claim now (y/n)?");
+                    $"IsValid: {claim.IsValid}\n \n");
                 //Console.ReadKey();
             }
         }
-
-        //delete menu item
-        //public void DeleteMenuItem()
-        //{
-        //    var fullMenu = _menuRepo.ViewMenu();
-
-        //    //get menu item to remove
-        //    Console.WriteLine("which item to remove");
-        //    foreach (Menu item in fullMenu)
-        //    {
-        //        Console.WriteLine($"{item.MealNumber}){item.MealName}");
-        //    }
-        //    Console.WriteLine("enter number");
-
-        //    var mealNum = int.Parse(Console.ReadLine());
-
-        //    //Call Delete
-
-        //    bool wasDeleted = _menuRepo.DeleteMenuItem(mealNum);
-
-        //    //if deleted say so
-        //    //otherwise say it could not be deleted
-        //    if (wasDeleted)
-        //    {
-        //        Console.WriteLine("The menu item was successfully removed");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Menu item could not be deleted");
-        //    }
-
-        //}
-        //seed method
-        private void SeedClaims()
+        public void TakeCareOfNextClaim()
         {
-            Claims claimOne = new Claims(3, ClaimType.Car, "Car accident on 465", 3456.78d, new DateTime (2019, 04, 23), new DateTime (2020, 02, 11));
-            Claims claimTwo = new Claims(45, ClaimType.Home, "House Fire", 50000.00d, new DateTime (2020, 07, 10), new DateTime (2020, 07, 15));
-            Claims claimThree = new Claims(3, ClaimType.Theft, "TV was stolen", 674.38d, new DateTime (2016,12,10), new DateTime (2017,01,02));
+            Console.Clear();
+            var nextClaim = _claimsRepo.TakeCareOfNextClaim();
+            Console.WriteLine(
+                    $"Details for next claim: \n" +
+                    $"ClaimID: {nextClaim.ClaimID}\n" +
+                    $"Type: {nextClaim.ClaimType} \n" +
+                    $"Description: {nextClaim.Description}\n" +
+                    $"Amount: ${nextClaim.ClaimAmount}\n" +
+                    $"DateOfIncident: {nextClaim.DateOfIncident}\n" +
+                    $"DateOfClaim: {nextClaim.DateOfClaim}\n" +
+                    $"IsValid: {nextClaim.IsValid}\n" +
+                    "Would you like to deal with this claim now (y/n)?");
+            string input = Console.ReadLine();
+            if (input == "y" || input == "Y")
+            {
+                _claimsRepo.RemoveClaim();
+                Console.Clear();
+                Menu();
+            }
+            else if (input == "n" || input == "N")
+            {
+                Console.Clear();
+                Menu();
+            }
+            else
+            {
+                Console.WriteLine("Please try again and enter a valid option (y/n).");
+            }
+            Console.Clear();
+        }
+            //Seed Claims List
+            private void SeedClaims()
+        {
+            Claims claimOne = new Claims(3, ClaimType.Car, "Truck slide down boat dock - Complete Loss.", 53456.78d, new DateTime (2019, 04, 23), new DateTime (2020, 02, 11));
+            Claims claimTwo = new Claims(45, ClaimType.Home, "Fire - Started by wood burning kit igniting drapes.", 50000.00d, new DateTime (2020, 07, 10), new DateTime (2020, 07, 15));
+            Claims claimThree = new Claims(3, ClaimType.Theft, "Broken Window. TV was stolen.", 674.38d, new DateTime (2016,12,10), new DateTime (2017,01,02));
 
             _claimsRepo.AddNewClaim(claimOne);
             _claimsRepo.AddNewClaim(claimTwo);

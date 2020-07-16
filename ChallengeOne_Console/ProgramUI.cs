@@ -11,8 +11,8 @@ namespace ChallengeOne_Console
 {
     class ProgramUI
     {
-        private MenuRepo _menuRepo = new MenuRepo(); //may need to change all instances to _menuContent for example
-        //Method that runs/starts the app
+        private MenuRepo _menuRepo = new MenuRepo();
+        //Method That Starts The App
         public void Run()
         {
             SeedMenu();
@@ -24,21 +24,23 @@ namespace ChallengeOne_Console
             bool stillLooking = true;
             while (stillLooking)
             {
-                //Display our options to user
-                Console.WriteLine("Select a menu option:\n" +
+                //Display Our Options To The User
+                Console.WriteLine(
+                    "Welcome To Komodo Cafe!\n\n" +
+                    "Select a menu option to continue:\n" +
                     "1. Add New Menu items\n" +
                     "2. View Menu\n" +
                     "3. Delete Menu Item\n" +
                     "4. Exit ");
 
-                //get the users input
+                //Get User Input
                 string input = Console.ReadLine();
 
-                //evaluate the input and act accordingly
+                //Evaulate Input & Act Accordingly
                 switch (input)
                 {
                     case "1":
-                        //Create new menu item
+                        //Create New Menu Item
                         AddFoodToMenu();
                         break;
                     case "2":
@@ -58,19 +60,19 @@ namespace ChallengeOne_Console
                         Console.WriteLine("Please enter a valid number");
                         break;
                 }
-                Console.WriteLine("Press any key to continue");
+                Console.WriteLine("Press any key to close menu!");
                 Console.ReadKey();
                 Console.Clear();
             }
         }
-        //Create  new menu items
+        //Create New Menu Items
         private void AddFoodToMenu()
         {
             Console.Clear();
             Menu newMenu = new Menu();
 
             //Meal Name
-            Console.WriteLine("Enter name for meal");
+            Console.WriteLine("What should we call this meal?");
             newMenu.MealName = Console.ReadLine();
 
             //Meal Number
@@ -83,7 +85,7 @@ namespace ChallengeOne_Console
             newMenu.Description = Console.ReadLine();
 
             //Ingredients
-            Console.WriteLine("whats this made of?");
+            Console.WriteLine("But what is this made of?");
             newMenu.Ingredients = Console.ReadLine();
 
             //Price
@@ -94,33 +96,34 @@ namespace ChallengeOne_Console
             _menuRepo.AddFoodToMenu(newMenu);
 
         }
-        //view all menu that is saved
+        //View All Menu Items That Are Saved (Currently only seeded items below)
         private void ViewMenu()
         {
             Console.Clear();
             List<Menu> listofMenu = _menuRepo.ViewMenu();
             foreach(Menu menu in listofMenu)
             {
-                Console.WriteLine($"Meal Number: {menu.MealNumber}\n" +
+                Console.WriteLine(
+                    $"Meal Number: {menu.MealNumber}\n" +
                     $"Meal Name: {menu.MealName}\n" +
                     $"Description: {menu.Description}\n" +
                     $"Ingredients: {menu.Ingredients}\n" +
-                    $"Price: ${menu.Price}");
+                    $"Price: ${menu.Price}\n");
             }
         }
 
-        //delete menu item
+        //Delete Menu Item
         public void DeleteMenuItem()
         {
             var fullMenu = _menuRepo.ViewMenu();
             
             //get menu item to remove
-            Console.WriteLine("which item to remove");
+            Console.WriteLine("Which meal would you like to remove?");
             foreach (Menu item in fullMenu)
             {
                 Console.WriteLine($"{item.MealNumber}){item.MealName}");
             }
-            Console.WriteLine("enter number");
+            Console.WriteLine("Enter which meal to throw out!");
 
             var mealNum = int.Parse(Console.ReadLine());
 
@@ -128,15 +131,13 @@ namespace ChallengeOne_Console
 
             bool wasDeleted =_menuRepo.DeleteMenuItem(mealNum);
 
-            //if deleted say so
-            //otherwise say it could not be deleted
             if (wasDeleted)
             {
-                Console.WriteLine("The menu item was successfully removed");
+                Console.WriteLine("Let's go ahead and 86 this from the menu!");
             }
             else
             {
-                Console.WriteLine("Menu item could not be deleted");
+                Console.WriteLine("Something went wrong. Try again.");
             }
 
         }
@@ -144,10 +145,12 @@ namespace ChallengeOne_Console
         private void SeedMenu()
         {
             Menu itemOne = new Menu("Bacon Lovers Delight", 1, "Bacon Stuffed Bacon Cheeseburger served with side of Bacon", "Bacon, Beef, Cheddar Cheese, Kaiser Roll, More Bacon!", 9.49);
-            Menu itemTwo = new Menu("Veggie Pizza", 2, "Our Homemade Dough Topped with all of our veggies", "Pizza Dough, Sauce, Cheese Blend, Onions, Green Peppers, Olives, Mushrooms, Banana Peppers", 12.99);
+            Menu itemTwo = new Menu("Veggie Pizza", 2, "Our Homemade Dough Topped with all of our veggies", "Pizza Dough, Sauce, Three Cheese Blend, Onions, Green Peppers, Olives, Mushrooms, Banana Peppers", 12.99);
+            Menu itemThree = new Menu("Chicago Bills HotDog", 3, "Jumbo Chicago HotDog served with waffle fries", "What ever hotdogs are made from and the fries are made from potatos", 7.19);
 
             _menuRepo.AddFoodToMenu(itemOne);
             _menuRepo.AddFoodToMenu(itemTwo);
+            _menuRepo.AddFoodToMenu(itemThree);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ChallengeTwo_Repository
 {
     public enum ClaimType
     {
-        Car = 1,
+        Car,
         Home,
         Theft,
     }
