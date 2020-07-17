@@ -1,0 +1,10 @@
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\bin\Debug\ChallengeFour_Console.exe.config
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\bin\Debug\ChallengeFour_Console.exe
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\bin\Debug\ChallengeFour_Console.pdb
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\bin\Debug\ChallengeFour_Repository.dll
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\bin\Debug\ChallengeFour_Repository.pdb
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\obj\Debug\ChallengeFour_Console.csprojAssemblyReference.cache
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\obj\Debug\ChallengeFour_Console.csproj.CoreCompileInputs.cache
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\obj\Debug\ChallengeFour_Console.csproj.CopyComplete
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\obj\Debug\ChallengeFour_Console.exe
+C:\Users\13173\Desktop\ElevenFiftyProjectsSD\GoldBadge\GoldBadgeConsoleAppChallenges\ChallengeFour_Console\obj\Debug\ChallengeFour_Console.pdb
